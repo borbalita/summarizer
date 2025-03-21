@@ -1,0 +1,22 @@
+variables:
+  UV_VERSION: 0.4
+  PYTHON_VERSION: 3.12
+  BASE_LAYER: bookworm-slim
+
+
+stages:
+  - build
+
+uv-install:
+  stage: build
+  image: ghcr.io/astral-sh/uv:$UV_VERSION-python$PYTHON_VERSION-$BASE_LAYER
+  variables:
+    UV_CACHE_DIR: .uv-cache
+  cache:
+    - key:
+        files:
+          - uv.lock
+      paths:
+        - $UV_CACHE_DIR
+  script:
+    - uv cache prune --ci
