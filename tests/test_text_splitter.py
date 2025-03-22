@@ -83,7 +83,6 @@ def test_split_text_logging(caplog):
         chunk_size=10, chunk_overlap=0, max_summary_tokens=1
     )
 
-    # Use caplog to capture log output
     with caplog.at_level(logging.DEBUG, logger="summarizer"):
         result = split_text(text, summary_parameters)
 

@@ -35,7 +35,8 @@ def sync_openai_call(
                 temperature=0.5,
                 max_output_tokens=summary_params.max_summary_tokens,
             )
-            return response.result  # type: ignore[attr-defined]
+            # ToDo: look up expected response type
+            return response.output[0].content[0].text  # type: ignore
 
         except AuthenticationError as e:
             logger.error("Authentication failed. Please check your OpenAI API key.")
