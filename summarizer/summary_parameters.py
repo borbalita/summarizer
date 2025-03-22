@@ -12,13 +12,11 @@ class SummaryParameters(BaseModel):
     max_summary_tokens: int = Field(
         default=100,
         gt=0,
-        le=1000,
         description="Maximum number of tokens for summarization.",
     )
     chunk_size: int = Field(
         default=2000,
         gt=0,
-        le=20000,
         description=(
             "Chunk size in **characters** used to divide the input text for summarization. "
             "Note: 200 characters roughly equals 50 tokens. "

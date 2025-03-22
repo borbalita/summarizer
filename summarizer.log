@@ -140,3 +140,42 @@
 2025-03-22 10:41:15,835 - DEBUG - Split text into 0 chunks.
 2025-03-22 10:41:15,836 - DEBUG - Splitting text of length 21 into chunks with chunk size 10 and overlap 0.
 2025-03-22 10:41:15,836 - DEBUG - Split text into 3 chunks.
+2025-03-22 11:00:05,173 - DEBUG - This is a test log message.
+2025-03-22 11:00:05,174 - DEBUG - Splitting text of length 20 into chunks with chunk size 20 and overlap 0.
+2025-03-22 11:00:05,175 - DEBUG - Split text into 1 chunks.
+2025-03-22 11:00:05,176 - DEBUG - Splitting text of length 92 into chunks with chunk size 20 and overlap 0.
+2025-03-22 11:00:05,176 - DEBUG - Split text into 6 chunks.
+2025-03-22 11:00:05,177 - DEBUG - Splitting text of length 95 into chunks with chunk size 20 and overlap 0.
+2025-03-22 11:00:05,177 - DEBUG - Split text into 7 chunks.
+2025-03-22 11:00:05,178 - DEBUG - Splitting text of length 38 into chunks with chunk size 10 and overlap 5.
+2025-03-22 11:00:05,178 - DEBUG - Split text into 6 chunks.
+2025-03-22 11:00:05,179 - DEBUG - Splitting text of length 0 into chunks with chunk size 10 and overlap 0.
+2025-03-22 11:00:05,179 - DEBUG - Split text into 0 chunks.
+2025-03-22 11:00:05,181 - DEBUG - Splitting text of length 21 into chunks with chunk size 10 and overlap 0.
+2025-03-22 11:00:05,181 - DEBUG - Split text into 3 chunks.
+2025-03-22 11:12:48,396 - DEBUG - This is a test log message.
+2025-03-22 11:12:48,397 - DEBUG - Splitting text of length 20 into chunks with chunk size 20 and overlap 0.
+2025-03-22 11:12:48,398 - DEBUG - Split text into 1 chunks.
+2025-03-22 11:12:48,399 - DEBUG - Splitting text of length 92 into chunks with chunk size 20 and overlap 0.
+2025-03-22 11:12:48,399 - DEBUG - Split text into 6 chunks.
+2025-03-22 11:12:48,400 - DEBUG - Splitting text of length 95 into chunks with chunk size 20 and overlap 0.
+2025-03-22 11:12:48,400 - DEBUG - Split text into 7 chunks.
+2025-03-22 11:12:48,401 - DEBUG - Splitting text of length 38 into chunks with chunk size 10 and overlap 5.
+2025-03-22 11:12:48,401 - DEBUG - Split text into 6 chunks.
+2025-03-22 11:12:48,402 - DEBUG - Splitting text of length 0 into chunks with chunk size 10 and overlap 0.
+2025-03-22 11:12:48,402 - DEBUG - Split text into 0 chunks.
+2025-03-22 11:12:48,403 - DEBUG - Splitting text of length 21 into chunks with chunk size 10 and overlap 0.
+2025-03-22 11:12:48,404 - DEBUG - Split text into 3 chunks.
+2025-03-22 11:15:15,808 - DEBUG - This is a test log message.
+2025-03-22 11:15:15,809 - DEBUG - Splitting text of length 20 into chunks with chunk size 20 and overlap 0.
+2025-03-22 11:15:15,810 - DEBUG - Split text into 1 chunks.
+2025-03-22 11:15:15,810 - DEBUG - Splitting text of length 92 into chunks with chunk size 20 and overlap 0.
+2025-03-22 11:15:15,811 - DEBUG - Split text into 6 chunks.
+2025-03-22 11:15:15,812 - DEBUG - Splitting text of length 95 into chunks with chunk size 20 and overlap 0.
+2025-03-22 11:15:15,812 - DEBUG - Split text into 7 chunks.
+2025-03-22 11:15:15,813 - DEBUG - Splitting text of length 38 into chunks with chunk size 10 and overlap 5.
+2025-03-22 11:15:15,813 - DEBUG - Split text into 6 chunks.
+2025-03-22 11:15:15,814 - DEBUG - Splitting text of length 0 into chunks with chunk size 10 and overlap 0.
+2025-03-22 11:15:15,814 - DEBUG - Split text into 0 chunks.
+2025-03-22 11:15:15,815 - DEBUG - Splitting text of length 21 into chunks with chunk size 10 and overlap 0.
+2025-03-22 11:15:15,815 - DEBUG - Split text into 3 chunks.
