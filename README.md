@@ -8,7 +8,12 @@ The **Text Summarizer** is a Python-based application designed to summarize larg
 
 Before running the app, you need to configure the environment variables:
 
-1. **Copy the `.env.example` File**:
+1. **Create an OpenAI API Key**:
+   - Go to the [OpenAI API Keys page](https://platform.openai.com/account/api-keys).
+   - Log in with your OpenAI account or create a new account if you don’t have one.
+   - Click on the **Create new secret key** button.
+
+2. **Create the `.env` file by copying `.env.example`**:
    ```bash
    cp .env.example .env
    ```
