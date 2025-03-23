@@ -2,6 +2,24 @@
 
 The **Text Summarizer** is a Python-based application designed to summarize large pieces of text using OpenAI's language models. It provides a Streamlit-based user interface for easy interaction and allows users to tweak summarization parameters such as maximum summary tokens, chunk size, and chunk overlap.
 
+---
+
+## Setting Up the Environment
+
+Before running the app, you need to configure the environment variables:
+
+1. **Copy the `.env.example` File**:
+   ```bash
+   cp .env.example .env
+   ```
+
+2. **Insert Your OpenAI API Key**:
+   Open the `.env` file and replace `YOUR_API_KEY` with your actual OpenAI API key:
+   ```env
+   OPENAI_API_KEY=<YOUR_API_KEY>
+   ```
+
+---
 
 ## Running the Summarizer App with Docker
 
