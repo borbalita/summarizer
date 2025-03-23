@@ -33,7 +33,7 @@ async def summarize_text_chunk(text: str, summary_params: SummaryParameters) -> 
     summary = await asyncio.to_thread(sync_openai_call, prompt, summary_params)
 
     # ToDo: define a custom detailed debug level for logging the generated summary
-    logger.debug(f"Generated a summary of length {len(summary)}")
+    logger.debug(f"Generated summary: {summary}")
 
     return summary
 
@@ -42,6 +42,18 @@ async def summarize_text_chunks(
     chunks: list[str], summary_params: SummaryParameters
 ) -> list[str]:
     """Summarize chunks in parallel."""
+    logger.info("Beginning to summarize text chunks.")
     tasks = [summarize_text_chunk(chunk, summary_params) for chunk in chunks]
-    summaries = await asyncio.gather(*tasks)
+
+    n_tasks = len(tasks)
+    summaries: list[str] = []
+    completed = 0
+
+    for task in asyncio.as_completed(tasks):
+        summary = await task
+        summaries.append(summary)
+        completed += 1
+        if completed % 10 == 0 or completed == n_tasks:
+            logger.info(f"Completed {completed}/{n_tasks} chunks.")
+
     return summaries

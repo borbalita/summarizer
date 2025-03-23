@@ -1,6 +1,7 @@
 import asyncio
 import math
 
+from summarizer.logger import logger
 from summarizer.openai_api_call import sync_openai_call
 from summarizer.summarizers.chunk_summarizer import summarize_text_chunks
 from summarizer.summary_parameters import SummaryParameters
@@ -35,21 +36,44 @@ async def _summarize_summary_group(
     return await asyncio.to_thread(sync_openai_call, prompt, summary_params)
 
 
+# ToDo: group_size could be automatically set based on chunk size / summary size ratio.
 async def _summarize_summary_groups(
-    summaries: list[str], summary_params: SummaryParameters, group_size=2
+    summaries: list[str], summary_params: SummaryParameters, group_size=4
 ) -> list[str]:
     """Summarize subsets of summaries in parallel."""
     n_groups = math.ceil(len(summaries) / group_size)
+
+    logger.info(f"Split summaries into {n_groups} summary groups of size {group_size}.")
+
     groups = [summaries[i * group_size : (i + 1) * group_size] for i in range(n_groups)]
     tasks = [_summarize_summary_group(group, summary_params) for group in groups]
-    return await asyncio.gather(*tasks)
+
+    combined_summaries: list[str] = []
+    completed = 0
+
+    for task in asyncio.as_completed(tasks):
+        summary = await task
+        combined_summaries.append(summary)
+        completed += 1
+        if completed % 10 == 0 or completed == n_groups:
+            logger.info(f"Completed {completed}/{n_groups} summary groups.")
+
+    return combined_summaries
 
 
 async def summarize_text(text: str, summary_params: SummaryParameters) -> str:
     """Summarize a text."""
+    logger.info("Beginning to summarize text")
+
     chunks = split_text(text, summary_params)
+    logger.info(f"Split the text into {len(chunks)} chunks.")
+
     summaries = await summarize_text_chunks(chunks, summary_params)
+
     while len(summaries) > 1:
+        logger.info(f"Beginning the combination of {len(summaries)} summaries.")
         summaries = await _summarize_summary_groups(summaries, summary_params)
+
+    logger.info("Finished summarizing text.")
 
     return summaries[0]
