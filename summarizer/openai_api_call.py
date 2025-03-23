@@ -21,7 +21,7 @@ client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 def sync_openai_call(
     prompt: str,
     summary_params: SummaryParameters,
-    retries: int = 3,
+    retries: int = 5,
     backoff: float = 2.0,
 ) -> str:
     """Calls the OpenAI API synchronously with retry and error handling."""
